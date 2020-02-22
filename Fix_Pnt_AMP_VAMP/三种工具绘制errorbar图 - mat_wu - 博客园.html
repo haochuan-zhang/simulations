@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.cnblogs.com/mat-wu/p/7966855.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin">
+    <meta property="og:description" content="误差棒是数据可变性的图形表示，并用于图表以指示所报告的测量中的误差或不确定性。他们给出了测量精确度的一般概念，或者相反，距报告值有多远，真实（无误差）值可能是多少。误差线通常代表不确定度的一个标准偏差">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>三种工具绘制errorbar图 - mat_wu - 博客园</title>
+    
+    <link rel="stylesheet" href="./三种工具绘制errorbar图 - mat_wu - 博客园_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./三种工具绘制errorbar图 - mat_wu - 博客园_files/bundle-thinkinside.min.css">
+    <link type="text/css" rel="stylesheet" href="./三种工具绘制errorbar图 - mat_wu - 博客园_files/custom.css">
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./三种工具绘制errorbar图 - mat_wu - 博客园_files/bundle-thinkinside-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/mat-wu/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/mat-wu/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/mat-wu/wlwmanifest.xml">
+    <script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/amp4ads-host-v0.js"></script><script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/pubads_impl_rendering_2020013001.js"></script><script async="" src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/analytics.js"></script><script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/jquery-2.2.0.min.js"></script>
+    <script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/blog-common.min.js"></script>
+    <script>
+        var currentBlogId = 265156;
+        var currentBlogApp = 'mat-wu';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+    </script>
+    
+    
+    
+<link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.cnblogs.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.cnblogs.com"></script><script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/pubads_impl_2020013001.js" async=""></script></head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/mat-wu/"><img id="blogLogo" src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/logo.gif" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/mat-wu/">mat_wu</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/mat-wu/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/mat_wu">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/mat-wu/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+48&nbsp; </span>
+<span id="stats_article_count">文章 - 
+4&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+57</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/mat-wu/p/7966855.html">三种工具绘制errorbar图</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>误差棒是数据可变性的图形表示，并用于图表以指示所报告的测量中的误差或不确定性。他们给出了测量精确度的一般概念，或者相反，距报告值有多远，真实（无误差）值可能是多少。误差线通常代表不确定度的一个标准偏差，一个标准误差或特定的置信区间（例如95％间隔）。</p>
+<p>如果各种其他条件成立，误差棒可以用来比较两种数量。这可以确定差异是否具有统计显着性。误差条也可以表明给定函数的拟合度，即函数描述数据的程度。实验科学中的科学论文预计在所有图表中都包含误差线。也已经表明，误差条可以被用作用于控制近似计算的概率算法的直接操纵界面。误差线也可以用正负号（±）加上误差的上限和减去误差的下限来表示。</p>
+<p>在论文写作中，经常会用到数据图表示一组数据的特点，可视化的图形能够十分清楚直观的比较数据之间的差异。对于数据的均值和标准差在同一个图中表示，可以很好的比较数据分布的差异，errorbar便是这么一种图。</p>
+<h3>1、Excel画图</h3>
+<p>（1）首先，选择一组数据，包含均值和标准差。</p>
+<p>（2）选择数据，然后在菜单栏插入——所有图表——散点图，点击确定</p>
+<p><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185535022-714492503.png" alt=""></p>
+<p>（3）选择图表右上角+号标记，选择误差线，并且选择误差数据即可。</p>
+<p>&nbsp;<img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185553288-491145827.png" alt=""></p>
+<p>4）点击更多选项，可以设置误差线的格式。如正负偏差，末端样式和自定义误差数据，上下限可以不同。</p>
+<p>&nbsp;<img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185609616-2061611078.png" alt=""></p>
+<p>（5）结果如图所示</p>
+<p><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185632101-1463243728.png" alt=""></p>
+<h3>2、origin 画图</h3>
+<p>（1）选择数据，在菜单栏plot——symbol——Y Error</p>
+<p>&nbsp;<img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185659147-684207307.png" alt=""></p>
+<p>（2）图如下所示。可以设置线型样式，标记样式等</p>
+<p>&nbsp;<img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185727554-1759112630.png" alt=""></p>
+<h3>3、matlab 画图</h3>
+<p>（1）matlab画图函数为errorbar，函数调用方式如下所示几种</p>
+<p>&nbsp;<img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185748038-1771736527.png" alt=""></p>
+<p>&nbsp;</p>
+<p>（2）matlab函数绘制的几种errorbar图形</p>
+<p><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/886795-20171203185805476-534789976.png" alt=""></p>
+<p>（3）代码实例</p>
+<p>&nbsp;</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_677071" class="syntaxhighlighter  matlab"><div class="toolbar"><span><a href="https://www.cnblogs.com/mat-wu/p/7966855.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="matlab comments">%errorbar函数实例</code></div><div class="line number2 index1 alt1"><code class="matlab functions bold">figure</code><code class="matlab plain">;</code></div><div class="line number3 index2 alt2"><code class="matlab functions bold">subplot</code><code class="matlab plain">(2,2,1);</code></div><div class="line number4 index3 alt1"><code class="matlab comments">%横轴</code></div><div class="line number5 index4 alt2"><code class="matlab plain">x = 1:10:100;</code></div><div class="line number6 index5 alt1"><code class="matlab comments">%均值</code></div><div class="line number7 index6 alt2"><code class="matlab plain">y = [20 30 45 40 60 65 80 75 95 90];</code></div><div class="line number8 index7 alt1"><code class="matlab comments">%标准差</code></div><div class="line number9 index8 alt2"><code class="matlab plain">err = 8*</code><code class="matlab functions bold">ones</code><code class="matlab plain">(</code><code class="matlab functions bold">size</code><code class="matlab plain">(y));</code></div><div class="line number10 index9 alt1"><code class="matlab comments">%线型，颜色，线宽，标记大小 </code></div><div class="line number11 index10 alt2"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(x,y,err,</code><code class="matlab string">'-*b'</code><code class="matlab plain">,</code><code class="matlab string">'LineWidth'</code><code class="matlab plain">,1</code><code class="matlab string">','</code><code class="matlab plain">MarkerSize',8)&nbsp; </code></div><div class="line number12 index11 alt1"><code class="matlab functions bold">xlabel</code><code class="matlab plain">(</code><code class="matlab string">'月份'</code><code class="matlab plain">);</code><code class="matlab functions bold">ylabel</code><code class="matlab plain">(</code><code class="matlab string">'销量/千件'</code><code class="matlab plain">);</code></div><div class="line number13 index12 alt2"><code class="matlab comments">%设置坐标轴字体大小粗细，字体样式以及横纵轴范围</code></div><div class="line number14 index13 alt1"><code class="matlab functions bold">set</code><code class="matlab plain">(</code><code class="matlab functions bold">gca</code><code class="matlab plain">,</code><code class="matlab string">'fontsize'</code><code class="matlab plain">,10,</code><code class="matlab string">'fontweight'</code><code class="matlab plain">,</code><code class="matlab string">'bold'</code><code class="matlab plain">,</code><code class="matlab string">'FontName'</code><code class="matlab plain">,</code><code class="matlab string">'Times New Roman'</code><code class="matlab plain">,</code><code class="matlab string">'XLim'</code><code class="matlab plain">,[0,120],</code><code class="matlab string">'YLim'</code><code class="matlab plain">,[0,120]);</code></div><div class="line number15 index14 alt2"><code class="matlab spaces">&nbsp;</code>&nbsp;</div><div class="line number16 index15 alt1"><code class="matlab functions bold">subplot</code><code class="matlab plain">(2,2,2);</code></div><div class="line number17 index16 alt2"><code class="matlab plain">x = 1:10:100;</code></div><div class="line number18 index17 alt1"><code class="matlab plain">y = [20 30 45 40 60 65 80 75 95 90];</code></div><div class="line number19 index18 alt2"><code class="matlab plain">err1 = 10*</code><code class="matlab functions bold">ones</code><code class="matlab plain">(</code><code class="matlab functions bold">size</code><code class="matlab plain">(y));</code></div><div class="line number20 index19 alt1"><code class="matlab plain">err2 = 10*</code><code class="matlab functions bold">rand</code><code class="matlab plain">(</code><code class="matlab functions bold">size</code><code class="matlab plain">(y));</code></div><div class="line number21 index20 alt2"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(x,y,err1,err2,</code><code class="matlab string">'*b'</code><code class="matlab plain">,</code><code class="matlab string">'LineWidth'</code><code class="matlab plain">,1</code><code class="matlab string">','</code><code class="matlab plain">MarkerSize',8)&nbsp; </code></div><div class="line number22 index21 alt1"><code class="matlab functions bold">xlabel</code><code class="matlab plain">(</code><code class="matlab string">'月份'</code><code class="matlab plain">);</code><code class="matlab functions bold">ylabel</code><code class="matlab plain">(</code><code class="matlab string">'销量/千件'</code><code class="matlab plain">);</code></div><div class="line number23 index22 alt2"><code class="matlab functions bold">title</code><code class="matlab plain">(</code><code class="matlab string">'No line'</code><code class="matlab plain">,</code><code class="matlab string">'fontsize'</code><code class="matlab plain">,10,</code><code class="matlab string">'fontweight'</code><code class="matlab plain">,</code><code class="matlab string">'bold'</code><code class="matlab plain">);</code></div><div class="line number24 index23 alt1"><code class="matlab comments">%设置坐标轴字体大小粗细，字体样式以及横纵轴范围</code></div><div class="line number25 index24 alt2"><code class="matlab functions bold">set</code><code class="matlab plain">(</code><code class="matlab functions bold">gca</code><code class="matlab plain">,</code><code class="matlab string">'fontsize'</code><code class="matlab plain">,10,</code><code class="matlab string">'fontweight'</code><code class="matlab plain">,</code><code class="matlab string">'bold'</code><code class="matlab plain">,</code><code class="matlab string">'FontName'</code><code class="matlab plain">,</code><code class="matlab string">'Times New Roman'</code><code class="matlab plain">,</code><code class="matlab string">'XLim'</code><code class="matlab plain">,[0,120],</code><code class="matlab string">'YLim'</code><code class="matlab plain">,[0,120]);</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="matlab functions bold">subplot</code><code class="matlab plain">(2,2,3)</code></div><div class="line number28 index27 alt1"><code class="matlab plain">Average1=[12,11,7,7,6,5];</code></div><div class="line number29 index28 alt2"><code class="matlab plain">Variance1=[0.5,0.4,0.3,1,0.3,0.5];&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%A地的数据</code></div><div class="line number30 index29 alt1"><code class="matlab plain">Average2=[10,8,5,4,3,3];</code></div><div class="line number31 index30 alt2"><code class="matlab plain">Variance2=[0.4,0.3,0.4,0.6,0.3,0.5];&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%B地的数据</code></div><div class="line number32 index31 alt1"><code class="matlab plain">Time=1:1:6;</code></div><div class="line number33 index32 alt2"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(Time,Average1,Variance1,</code><code class="matlab string">'r-o'</code><code class="matlab plain">)&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%A地误差棒图，用红色线表示</code></div><div class="line number34 index33 alt1"><code class="matlab functions bold">hold</code> <code class="matlab plain">on</code></div><div class="line number35 index34 alt2"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(Time,Average2,Variance2,</code><code class="matlab string">'b-s'</code><code class="matlab plain">)&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%B地误差棒图，用蓝色线表示</code></div><div class="line number36 index35 alt1"><code class="matlab functions bold">xlabel</code><code class="matlab plain">(</code><code class="matlab string">'月份'</code><code class="matlab plain">);</code><code class="matlab functions bold">ylabel</code><code class="matlab plain">(</code><code class="matlab string">'销量/千件'</code><code class="matlab plain">);</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="matlab functions bold">subplot</code><code class="matlab plain">(2,2,4);</code></div><div class="line number39 index38 alt2"><code class="matlab plain">Average2=[120,110,70,70,60,50];</code></div><div class="line number40 index39 alt1"><code class="matlab plain">Variance2=[15,14,8,10,9,9];&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%A地的数据</code></div><div class="line number41 index40 alt2"><code class="matlab plain">Average3=[100,80,50,40,30,30];</code></div><div class="line number42 index41 alt1"><code class="matlab plain">Variance3=[14,8.3,9.4,10.6,13,15];&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%B地的数据</code></div><div class="line number43 index42 alt2"><code class="matlab plain">Time=1:1:6;</code></div><div class="line number44 index43 alt1"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(Time,Average2,Variance2,</code><code class="matlab string">'ro'</code><code class="matlab plain">)&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%A地误差棒图，用红色线表示</code></div><div class="line number45 index44 alt2"><code class="matlab functions bold">hold</code> <code class="matlab plain">on</code></div><div class="line number46 index45 alt1"><code class="matlab functions bold">errorbar</code><code class="matlab plain">(Time,Average3,Variance3,</code><code class="matlab string">'bs'</code><code class="matlab plain">,</code><code class="matlab string">'MarkerSize'</code><code class="matlab plain">,10,...</code></div><div class="line number47 index46 alt2"><code class="matlab spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlab string">'MarkerEdgeColor'</code><code class="matlab plain">,</code><code class="matlab string">'red'</code><code class="matlab plain">,</code><code class="matlab string">'MarkerFaceColor'</code><code class="matlab plain">,</code><code class="matlab string">'red'</code><code class="matlab plain">)&nbsp;&nbsp;&nbsp; </code><code class="matlab comments">%B地误差棒图，用蓝色线表示</code></div><div class="line number48 index47 alt1"><code class="matlab functions bold">xlabel</code><code class="matlab plain">(</code><code class="matlab string">'月份'</code><code class="matlab plain">);</code><code class="matlab functions bold">ylabel</code><code class="matlab plain">(</code><code class="matlab string">'销量/千件'</code><code class="matlab plain">);</code></div><div class="line number49 index48 alt2"><code class="matlab functions bold">set</code><code class="matlab plain">(</code><code class="matlab functions bold">gca</code><code class="matlab plain">,</code><code class="matlab string">'fontsize'</code><code class="matlab plain">,10,</code><code class="matlab string">'fontweight'</code><code class="matlab plain">,</code><code class="matlab string">'bold'</code><code class="matlab plain">,</code><code class="matlab string">'FontName'</code><code class="matlab plain">,</code><code class="matlab string">'Times New Roman'</code><code class="matlab plain">,</code><code class="matlab string">'XLim'</code><code class="matlab plain">,[0,8],</code><code class="matlab string">'YLim'</code><code class="matlab plain">,[0,140]);</code></div><div class="line number50 index49 alt1"><code class="matlab functions bold">grid</code> <code class="matlab plain">on;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+</div>
+<div id="MySignature" style="display: block;"><div class="div_masklayer" id="div_masklayer"></div>
+<div class="div_popup" id="Div_popup"> <img class="img_zfb" id="img_zfb" src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/o_12.png">
+  <p class="mid">您的资助是我最大的动力！<br>金额随意,欢迎来赏！</p>
+  
+</div>
+
+
+<div class="autograph"> 
+<p style="font-family: 微软雅黑; font-weight: bold; font-size: 16px">
+<br>
+*******************************************作者信息*******************************************<br>
+Author:Mat_Wu<br><br>
+
+Email:mat_wu@163.com<br>
+*************************************************
+*******************************************<br>
+</p>
+
+    &nbsp;&nbsp;&nbsp;如果，您认为阅读这篇博客让您有些收获，不妨点击一下右下角的<a id="btnRecommendMyBlog">【<strong>推荐</strong>】</a>按钮。<br>
+<br>
+    &nbsp;&nbsp;&nbsp;如果，您希望更容易地发现我的新博客，不妨点击一下绿色通道的<a id="guanzhuwo">【<strong>关注我</strong>】</a>。<p></p>
+  
+  <p>感谢您的阅读，我是【<strong>Mat_Wu</strong>】！<br><br>
+<span style="font-weight: bold; color: red">&nbsp;&nbsp;&nbsp;本文版权归作者所有，欢迎转载,请在文章页面明显位置给出原文连接。</span></p>
+</div></div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/mat-wu/category/928035.html" target="_blank">数据可视化</a></div>
+<div id="EntryTag">
+    标签: 
+            <a href="https://www.cnblogs.com/mat-wu/tag/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a></div>
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7966855,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;3d3e0018-54c3-e511-9fc1-ac853d9f53cc&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/mat-wu/" target="_blank"><img src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/20171106211200.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/mat-wu/">mat_wu</a><br>
+            <a href="https://home.cnblogs.com/u/mat-wu/followees/">关注 - 1</a><br>
+            <a href="https://home.cnblogs.com/u/mat-wu/followers/">粉丝 - 103</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;3d3e0018-54c3-e511-9fc1-ac853d9f53cc&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(7966855,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(7966855,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/mat-wu/p/7853405.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/mat-wu/p/7853405.html" title="发布于 2017-11-17 20:49">医学图像数据（三）——TCIA部分数据下载方式</a>
+    <br>
+    <a href="https://www.cnblogs.com/mat-wu/p/8046889.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/mat-wu/p/8046889.html" title="发布于 2017-12-16 16:26">“Excel-建议不可用于您所选择的数据”错误提示</a>
+
+</div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2017-12-03 19:04</span>&nbsp;
+<a href="https://www.cnblogs.com/mat-wu/">mat_wu</a>&nbsp;
+阅读(<span id="post_view_count">11833</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7966855" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(7966855);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 265156, cb_blogApp = 'mat-wu', cb_blogUserGuid = '3d3e0018-54c3-e511-9fc1-ac853d9f53cc';
+    var cb_entryId = 7966855, cb_entryCreatedDate = '2017-12-03 19:04', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/mat-wu/p/7966855.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/mat-wu/p/7966855.html#top">返回顶部</a></div>
+    <div id="comment_form_container"><div class="login_tips">
+    注册用户登录后才能发表评论，请 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a>
+     或 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，
+    <a href="https://www.cnblogs.com/">访问</a> 网站首页。
+</div></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ucancode&#39;)">【推荐】超50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://cloud.tencent.com/act/season?fromSource=gwzcw.3422970.3422970.3422970&amp;utm_medium=cpc&amp;utm_id=gwzcw.3422970.3422970.3422970" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【活动】腾讯云服务器推出云产品采购季 1核2G首年仅需99元</a><br><a href="https://developer.aliyun.com/article/714139?utm_content=g_1000088940" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-阿里云开发者社区&#39;)">【推荐】阿里专家五年方法论总结！技术人如何实现职业突破？</a><br><a href="https://developer.aliyun.com/article/744670?utm_content=g_1000104140" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-阿里云开发者社区&#39;)">【推荐】如何在面试中成长？来看阿里前端终面官的面试心得</a><br></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CNy2vJWJ4OcCFQGGlgodICkL9g"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./三种工具绘制errorbar图 - mat_wu - 博客园_files/saved_resource.html"></iframe></div></div>
+    </div>
+    <div id="under_post_news"><div class="recomm-block"><b>相关博文：</b><br>·  <a title="paper 39 ：Matlab绘制误差棒图（errorbar函数的使用）" href="https://www.cnblogs.com/molakejin/p/5259567.html" target="_blank" onclick="clickRecomItmem(5259567)">paper 39 ：Matlab绘制误差棒图（errorbar函数的使用）</a><br>·  <a title="标准差(Standard Deviation) 和 标准误差(Standard Error)" href="https://www.cnblogs.com/jhcelue/p/7388773.html" target="_blank" onclick="clickRecomItmem(7388773)">标准差(Standard Deviation) 和 标准误差(Standard Error)</a><br>·  <a title="PP图和QQ图" href="https://www.cnblogs.com/king-lps/p/7840268.html" target="_blank" onclick="clickRecomItmem(7840268)">PP图和QQ图</a><br>·  <a title="统计工具之QQ图" href="https://www.cnblogs.com/takeaction/p/4553289.html" target="_blank" onclick="clickRecomItmem(4553289)">统计工具之QQ图</a><br>·  <a title="标准误(Standard Error)" href="https://www.cnblogs.com/webRobot/p/7722686.html" target="_blank" onclick="clickRecomItmem(7722686)">标准误(Standard Error)</a><br>»  <a target="_blank" href="https://recomm.cnblogs.com/blogpost/7966855">更多推荐...</a><div id="cnblogs_t5"><a href="https://developer.aliyun.com/ask/258350?utm_content=g_1000088952" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T5-阿里云开发者社区&#39;)">精品问答：前端开发必懂之 HTML 技术五十问</a></div></div></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CN22vJWJ4OcCFQGGlgodICkL9g">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none; width: 468px; height: 60px;"></div></div>
+    </div>
+    <div id="under_post_kb">
+<div class="itnews c_ad_block">
+    <b>最新 IT 新闻</b>:
+    <br>
+ ·              <a href="https://news.cnblogs.com/n/656059/" target="_blank">华为宣布获得91个5G合同，将投2000 万美元支持5G应用</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/656053/" target="_blank">这时候千万别远程离职</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/656055/" target="_blank">OYO在亚洲设立第二支抗疫基金，金额20万美元</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/656056/" target="_blank">三星最先进EUV产线投用：7nm产能今年增加两倍</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/656054/" target="_blank">Cloud Toolkit VSCode 新版本发布，一键打包部署，开发提速 8 倍</a>
+            <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news">
+    
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/mat-wu/">
+            mat_wu
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/mat-wu/" title="入园时间：2016-01-25">
+            4年
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/mat-wu/followers/">
+            103
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/mat-wu/followees/">
+            1
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;3d3e0018-54c3-e511-9fc1-ac853d9f53cc&#39;)">+加关注</a></div>
+        <script>getFollowStatus('3d3e0018-54c3-e511-9fc1-ac853d9f53cc');</script>
+    </div>
+</div>
+
+</div>
+
+			<div id="blog-calendar" style="">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2020/01/20&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2020年2月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2020/03/20&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+                    <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+                    <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+                    <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+                    <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+                    <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+                    <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+                    <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+        </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">26</td>
+                            <td class="CalOtherMonthDay" align="center">27</td>
+                            <td class="CalOtherMonthDay" align="center">28</td>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                            <td class="CalOtherMonthDay" align="center">31</td>
+                    <td class="CalWeekendDay" align="center">
+                        1
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            2
+                        </td>
+                            <td class="" align="center">
+                                3
+                            </td>
+                            <td class="" align="center">
+                                4
+                            </td>
+                            <td class="" align="center">
+                                5
+                            </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            8
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            9
+                        </td>
+                            <td class="" align="center">
+                                10
+                            </td>
+                            <td class="" align="center">
+                                11
+                            </td>
+                            <td class="" align="center">
+                                12
+                            </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            15
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            16
+                        </td>
+                            <td class="" align="center">
+                                17
+                            </td>
+                            <td class="" align="center">
+                                18
+                            </td>
+                            <td class="" align="center">
+                                19
+                            </td>
+                            <td class="CalTodayDay" align="center">
+                                20
+                            </td>
+                            <td class="" align="center">
+                                21
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            22
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            23
+                        </td>
+                            <td class="" align="center">
+                                24
+                            </td>
+                            <td class="" align="center">
+                                25
+                            </td>
+                            <td class="" align="center">
+                                26
+                            </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            29
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalOtherMonthDay" align="center">
+                            1
+                        </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                2
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                3
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                5
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                6
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            7
+                        </td>
+                </tr>
+    </tbody>
+</table></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    
+</div>
+
+<!-- 常用链接 -->
+
+
+<!-- 最新随笔 -->
+
+
+
+<!-- 我的标签 -->
+<div id="sidebar_toptags" class="sidebar-block">
+    <div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/3D%20Slicer/">3D Slicer</a>(8)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/MATLAB/">MATLAB</a>(5)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/%E8%82%BA%E7%BB%93%E8%8A%82%E7%89%B9%E5%BE%81/">肺结节特征</a>(5)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a>(5)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>(4)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/TCIA/">TCIA</a>(3)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/C%23%E5%AE%9E%E4%BE%8B/">C#实例</a>(3)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/EndNote/">EndNote</a>(3)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/IDE/">IDE</a>(2)
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/mat-wu/tag/JAVA/">JAVA</a>(1)
+        </li>
+            <li>
+                <a href="https://www.cnblogs.com/mat-wu/tag/">更多</a>
+            </li>
+
+</ul>
+</div>
+
+
+</div>
+
+<!-- 积分与排名 -->
+
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+    
+        <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+            <h3 class="catListTitle">
+                
+
+随笔分类
+<span style="font-size:11px;font-weight:normal">(50)</span>
+
+
+            </h3>
+
+
+            <ul>
+
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/837501.html" rel="" target="">
+    MATLAB
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/862257.html" rel="" target="">
+    Notes(4)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/832215.html" rel="" target="">
+    程序园(14)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/947297.html" rel="" target="">
+    机器学习(4)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/862292.html" rel="" target="">
+    其他(3)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/928035.html" rel="" target="">
+    数据可视化(5)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/1012774.html" rel="" target="">
+    学习辅助(4)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/category/1012772.html" rel="" target="">
+    医学图像(16)
+</a>
+ 
+
+                        </li>
+
+            </ul>
+
+
+        </div>
+        <div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+            <h3 class="catListTitle">
+                
+
+随笔档案
+<span style="font-size:11px;font-weight:normal">(48)</span>
+
+
+            </h3>
+
+
+            <ul>
+
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2019/04.html" rel="" target="">
+    2019年4月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2019/03.html" rel="" target="">
+    2019年3月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2018/08.html" rel="" target="">
+    2018年8月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2018/06.html" rel="" target="">
+    2018年6月(2)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2018/03.html" rel="" target="">
+    2018年3月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2018/02.html" rel="" target="">
+    2018年2月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2018/01.html" rel="" target="">
+    2018年1月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/12.html" rel="" target="">
+    2017年12月(2)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/11.html" rel="" target="">
+    2017年11月(6)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/10.html" rel="" target="">
+    2017年10月(3)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/08.html" rel="" target="">
+    2017年8月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/07.html" rel="" target="">
+    2017年7月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/06.html" rel="" target="">
+    2017年6月(3)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/04.html" rel="" target="">
+    2017年4月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/03.html" rel="" target="">
+    2017年3月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/02.html" rel="" target="">
+    2017年2月(4)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2017/01.html" rel="" target="">
+    2017年1月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/12.html" rel="" target="">
+    2016年12月(2)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/11.html" rel="" target="">
+    2016年11月(4)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/10.html" rel="" target="">
+    2016年10月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/09.html" rel="" target="">
+    2016年9月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/08.html" rel="" target="">
+    2016年8月(7)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/07.html" rel="" target="">
+    2016年7月(1)
+</a>
+ 
+
+                        </li>
+                        <li>
+                            
+<a href="https://www.cnblogs.com/mat-wu/archive/2016/06.html" rel="" target="">
+    2016年6月(1)
+</a>
+ 
+
+                        </li>
+
+            </ul>
+
+
+        </div>
+
+</div>
+
+<!-- 最新评论 -->
+<div id="sidebar_recentcomments" class="sidebar-block">
+    <div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div class="RecentCommentBlock">
+        <ul>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/mat-wu/p/10601401.html#4496371">1. Re:肺结节CT影像特征提取（五）——肺结节CT影像ROI区域灰度直方图及其图形化</a></li>
+                    <li class="recent_comment_body">您好，请问您能不能把您的论文发给我借阅一下呢<br>不会传播的，谢谢<br>邮箱：3025310665@qq.com</li>
+                    <li class="recent_comment_author">--254苟富贵</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/mat-wu/p/8430743.html#4482416">2. Re:3D Slicer中文教程（八）—导出STL文件</a></li>
+                    <li class="recent_comment_body">不行的，我试过了，没有STL这个格式的选项，换了最新版本也是不行，大神，请问还有什么方法吗？</li>
+                    <li class="recent_comment_author">--星8</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/mat-wu/p/7778978.html#4472800">3. Re:3D Slicer中文教程（五）—三维视图颜色改变</a></li>
+                    <li class="recent_comment_body">按照这个步骤来，为什么图像颜色没有变，请问一下是不是有些地方没设置好的原因呢？</li>
+                    <li class="recent_comment_author">--池城于谦</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/mat-wu/p/6952582.html#4471767">4. Re:肺结节CT影像特征提取（四）——肺结节CT影像特征提取MATLAB代码实现</a></li>
+                    <li class="recent_comment_body">楼主的代码可以发一份吗，247422053@qq.com  万分感谢</li>
+                    <li class="recent_comment_author">--Zidane3502</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/mat-wu/p/6952582.html#4468629">5. Re:肺结节CT影像特征提取（四）——肺结节CT影像特征提取MATLAB代码实现</a></li>
+                    <li class="recent_comment_body">楼主的代码可以发一份吗，谢谢839570864@qq.com</li>
+                    <li class="recent_comment_author">--Zhuoxh</li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block">
+    <div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7130358.html">
+                            1. Pycharm新建模板默认添加作者时间等信息(25362)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6119907.html">
+                            2. excel多组数据散点图生成(24626)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7739258.html">
+                            3. 3D Slicer中文教程（一）—下载及安装方法(21870)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6786240.html">
+                            4. excel生成数据地图(16852)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7771460.html">
+                            5. 3D Slicer中文教程（四）—图像分割(13585)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7966855.html">
+                            6. 三种工具绘制errorbar图(11833)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6395125.html">
+                            7. 机器学习十大算法（二）(10674)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/5732061.html">
+                            8. PHPSTORM设置新建PHP文件头部注释(10179)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6613740.html">
+                            9. 利用web of science做论文综述(9713)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6217411.html">
+                            10. 雷达图制作方法(8363)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7746087.html">
+                            11. 3D Slicer中文教程（三）—数据加载及保存方式(7466)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7746067.html">
+                            12. 3D Slicer中文教程（二）—软件功能界面介绍(7320)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/7853360.html">
+                            13. 医学图像数据（一）——TCIA基本介绍(6603)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6935354.html">
+                            14. 肺结节CT影像特征提取（二）——肺结节CT图像特征提取算法描述(5945)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/5991378.html">
+                            15. combobox实现模糊查询自动填充(5764)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6952582.html">
+                            16. 肺结节CT影像特征提取（四）——肺结节CT影像特征提取MATLAB代码实现(5127)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6279852.html">
+                            17. win7系统查看硬盘序列号步骤(4785)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6936606.html">
+                            18. 肺结节CT影像特征提取（三）——肺结节CT影像特征提取系统软件设计(4725)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6083234.html">
+                            19. EndNote(二)之英文引文导入方式(4633)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/mat-wu/p/6395105.html">
+                            20. 机器学习十大算法（一）(4095)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+<!-- 评论排行榜 -->
+
+
+<!-- 推荐排行榜 -->
+</div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2020 mat_wu
+<br><span id="poweredby">Powered by .NET Core on Linux</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+</body></html>
